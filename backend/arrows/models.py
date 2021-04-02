@@ -13,7 +13,7 @@ class ArrowModel(models.Model):
     vanes_length = models.CharField(null=True, blank=True, max_length=100)
     vanes_color = models.CharField(null=True, blank=True, max_length=100)
     point_type = models.CharField(null=True, blank=True, max_length=100)
-    point_weight = models.CharField(null=True, blank=True, max_length=100)
+    point_weight = models.IntegerField(null=True, blank=True)
     insert_type = models.CharField(null=True, blank=True, max_length=100)
     nock_type = models.CharField(null=True, blank=True, max_length=100)
     nock_color = models.CharField(null=True, blank=True, max_length=100)
