@@ -2,9 +2,9 @@
 
 if [ "$DATABASE" = "postgres" ]
 then
-    echo "waiting gor postgres......."
+    echo "Waiting for postgres..."
 
-    while ! nc -z $SQL HOST $SQL PORT; do
+    while ! nc -z $SQL_HOST $SQL_PORT; do
         sleep 0.1
     done
 
@@ -16,4 +16,4 @@ python manage.py migrate
 
 exec "$@"
 
-gunicorn base.wsgi --bind 0.0.0.0:8000 --workers 4 --threads 4
+gunicorn backend.wsgi --bind 0.0.0.0:8000 --workers 4 --threads 4

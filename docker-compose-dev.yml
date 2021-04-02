@@ -1,7 +1,7 @@
-version: '3.7'
+version: "3.7"
 
-services: 
-  backend: 
+services:
+  backend:
     container_name: backend_dev
     build: 
       context: ./backend
@@ -19,21 +19,22 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev
-    volumes:
+    volumes: 
       - '.:/app'
       - '/app/node_modules'
-    ports:
+    ports: 
       - 3000:3000
-    environment: 
+    environment:
       - CHOKIDAR_USEPOLLING=true
   db:
-    container_name: postgresql_dev
+    container_name: postgresql_bue_dev
     image: postgres:12.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=bue_strenge_gemmer
       - POSTGRES_PASSWORD=bue_strenge_gemmer
-      - POSTGRES_DB=bue_strenge_gemmer
+      - POSTGRES_DB=bue_strenge_gemmer_dev
+
 volumes:
   postgres_data:
