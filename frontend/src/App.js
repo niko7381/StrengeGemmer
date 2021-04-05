@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Arrowpage from "./components/ArrowPage";
-import Stringpage from "./components/StringPage";
+import Arrow from "./containers/Arrows";
+import Strings from "./containers/Strings";
 
-import Homepage from "./containers/Homepage";
+import Home from "./containers/Home";
 
 import Layout from "./hocs/Layout"
 
@@ -12,9 +12,9 @@ const App = () => {
       <Router>
         <Layout>
           <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route exact path="/arrows" component={Arrowpage} />
-            <Route exact path="/strings" component={Stringpage} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/arrows" component={Arrow} />
+            <Route exact path="/strings" component={Strings} />
           </Switch>
         </Layout>
       </Router>
